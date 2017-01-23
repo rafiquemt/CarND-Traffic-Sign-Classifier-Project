@@ -1,6 +1,8 @@
 data
+lenet.*
 .ipynb_checkpoints
 *.h5
+checkpoint
 models
 *.swp
 *.p
