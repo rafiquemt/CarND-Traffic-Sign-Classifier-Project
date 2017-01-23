@@ -31,13 +31,14 @@ n_test = len(X_test)
 image_shape = X_train[0].shape
 
 # TODO: How many unique classes/labels there are in the dataset.
-n_classes = 42
+n_classes = 43
 
 print("Number of training examples =", n_train)
 print("Number of testing examples =", n_test)
 print("Image data shape =", image_shape)
 print("Number of classes =", n_classes)
 
+print(X_train.shape)
 
 # ----------- Visualize
 ### Data exploration visualization goes here.
