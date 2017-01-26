@@ -4,5 +4,6 @@ lenet.*
 *.h5
 checkpoint
 models
+.DS_Store
 *.swp
 *.p
