@@ -24659,6 +24659,18 @@ I simply shuffled the data and selected the last 30% as the validation set. I di
 <p><strong>Answer:</strong>
 This is effectively the LeNet optimizer from the lab.</p>
 <p>The only additional tweak on my part was to add a drop out layer 3 and layer 4. I also had to tweak the input layer to be size 32x32x3</p>
+<p>All layers are relu activated</p>
+<ol>
+<li>Layer 1: Convolutional. Input = 32x32x3. Output = 28x28x6.</li>
+<li>Layer 2: Convolutional. Output = 10x10x16.</li>
+<li>Max Pooling. Input = 10x10x16. Output = 5x5x16.</li>
+<li>Flatten. Input = 5x5x16. Output = 400.</li>
+<li>Layer 3: Fully Connected. Input = 400. Output = 120.</li>
+<li><em>Dropout - for minimizing overfitting</em></li>
+<li>Layer 4: Fully Connected. Input = 120. Output = 84</li>
+<li>Layer 5: Fully Connected. Input = 84. Output = 43</li>
+</ol>
+<p>Adding the dropout layer made the model perform much better</p>
 
 </div>
 </div>
@@ -25585,7 +25597,7 @@ aCzlbA8f8pkAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The additional images were selected from google street view on random roads in Frankfurt. The model performed with a 87.5% accuracy on the selected images.</p>
+<p>The additional images were selected from google street view on random roads in Frankfurt. The model performed with a 87.5% accuracy on the selected images. Compared to this the validation set accuracy was 98.5% and the test set accuracy was 93.6%</p>
 <p>Initially the accuracy was coming out to be under 50%, but then I noticed that the cv2.imread api was loading images in BGR format, while the network was trained on RGB. Transforming the images to RGB after reading from imread improved the accuracy.</p>
 <p>We explore the inaccuracies in the next section</p>
 
